@@ -2,33 +2,29 @@
 
 This repository contains code that merges three different data sources: [Global Building Atlas](https://sat-io.earthengine.app/view/gba) building footprints, [California parcel data](https://egis-lacounty.hub.arcgis.com/documents/baaf8251bfb94d3984fb58cb5fd93258/about), and individual household data provided through the capstone client (referred to here as "Zillow data"). It then uses available data on number of housing units to create a linear regression that predicts this information for observations for where it is missing.
 
-## Repository Contents
+## Repository Contents and Description
 ```
-── README.md
 ├── images
 │   └── labeled_tiles.png
+├── multi_unit_regression.ipynb
 ├── parquets_merge.ipynb
-├── py_scripts
-│   ├── unit_regression.py
-│   └── unit_regression_claude.py
-└── smallscale_regression
-    ├── building_function.ipynb
-    ├── parcel_exploration.ipynb
-    ├── regression_draft.ipynb
-    ├── regression_prep.ipynb
-    ├── unit_regression_v1_la.ipynb
-    ├── unit_regression_v2_sd.ipynb
-    ├── unit_regression_v3_pge.ipynb
-    ├── unit_regression_v4_ventura.ipynb
-    └── unit_regression_v5_marin.ipynb
+├── regression_prep.ipynb
+├── validate_units.ipynb
+└── visualization.ipynb
 ```
 
-### Folder description
 **images**: Contains a single image with labeled parquet parcels for `parquets_merge.ipynb` notebook.
 
-**py_scripts**: .py scripts that were used to run unit regression on a smaller scale.
+**multi_unit_regression.ipynb**: Final unit regression pipeline. Requires building footprints, residential home points, and parcel data to run.
 
-**smallscale_regression**: Multiple notebooks running different iterations of unit regression on different areas of California.
+**parquets_merge.ipynb**: Merges all of the Global Building Atlas tiles that cover California into file.
+
+**regression_prep.ipynb**: Preliminary exploration and a scatterplot showing building volume v. number of residential units.
+
+**validate_units.ipynb**: Exploration of multi_unit_regression.ipynb results.
+
+**visualization.ipynb**: Currently incomplete (accidentally deleted). Will contain exploratory visualizations of multi_unit_regression.ipynb results and compare them to the original Zillow data.
+
 
 ## Contributors
 - [Sofia Sarak](https://github.com/sofiasarak)
